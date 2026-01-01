@@ -1,197 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AN Badminton Academy</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8fafc;
-      color: #1f2933;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #020617, #0f172a);
-      color: #ffffff;
-      padding: 70px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 1.15rem;
-      opacity: 0.95;
-    }
-    .cta {
-      margin-top: 30px;
-    }
-    .cta a {
-      text-decoration: none;
-      background: #ffffff;
-      color: #020617;
-      padding: 12px 20px;
-      margin: 6px;
-      border-radius: 6px;
-      font-weight: bold;
-      display: inline-block;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 35px;
-      color: #020617;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
-    .box {
-      background: #ffffff;
-      padding: 22px;
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-    }
-    .box h3 {
-      margin-top: 0;
-      color: #0f172a;
-    }
-    .center {
-      text-align: center;
-    }
-    .gallery div {
-      background: #e5e7eb;
-      height: 160px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    footer {
-      background: #020617;
-      color: #e5e7eb;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    footer a {
-      color: #93c5fd;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AN Badminton Academy</title>
+
+<style>
+:root {
+  --bg-dark: #020617;
+  --bg-card: #0f172a;
+  --accent: #22c55e;
+  --text-light: #e5e7eb;
+  --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: #020617;
+  color: var(--text-light);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(120deg, rgba(2,6,23,.85), rgba(2,6,23,.7)),
+    url("1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* 👈 ADD THIS */
+  padding: 40px;
+}
+
+.hero-box {
+  max-width: 650px;
+  text-align: center;
+  background: rgba(15,23,42,.55);
+  backdrop-filter: blur(14px);
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero span {
+  color: var(--accent);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin: 20px 0 30px;
+}
+
+.hero a {
+  text-decoration: none;
+  background: var(--accent);
+  color: #022c22;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+/* ===== SECTION ===== */
+section {
+  padding: 100px 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.sub {
+  color: var(--text-muted);
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+/* ===== PROGRAMS ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(160deg, #0f172a, #020617);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  transition: transform .35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .content {
+  padding: 25px;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+/* ===== TIMINGS ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 25px;
+}
+
+.stat {
+  background: #0f172a;
+  padding: 30px;
+  border-radius: 18px;
+  border-left: 4px solid var(--accent);
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #01040f;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+footer p {
+  color: var(--text-muted);
+  margin: 8px 0;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>AN Badminton Academy</h1>
-  <p>Train Smart. Play Strong. Compete Better.</p>
-  <p>
-    Professional badminton coaching for kids, adults, and competitive players
-    with a strong focus on technique, fitness, and discipline.
-  </p>
-  <div class="cta">
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-box">
+    <h1>AN <span>Badminton</span><br/>Academy</h1>
+    <p>
+      Elite badminton coaching for kids, adults, and competitive players.
+      Built for discipline, fitness, and real match performance.
+    </p>
     <a href="#">📞 Call for Admission</a>
-    <a href="#">📍 Visit the Academy</a>
+    <a href="#">📍 Visit Academy</a>
   </div>
-</header>
+</div>
 
+<!-- ABOUT -->
 <section>
-  <h2>About the Academy</h2>
-  <p class="center" style="max-width:750px; margin:auto;">
-    AN Badminton Academy is a dedicated training centre for players who want to
-    learn badminton the right way. Our coaching approach focuses on strong
-    fundamentals, structured practice, physical fitness, and match confidence.
-    <br/><br/>
-    Whether you are a beginner or an aspiring competitive player, our programs
-    are designed to help you improve step by step in a positive and motivating
-    environment.
+  <h2>Built for Players Who Want Results</h2>
+  <p class="sub">
+    AN Badminton Academy is a high-performance training environment where players
+    are developed with strong fundamentals, structured routines, and competitive
+    mindset — not casual play.
   </p>
 </section>
 
+<!-- PROGRAMS -->
 <section>
   <h2>Coaching Programs</h2>
+  <p class="sub">Structured programs designed for every stage of a player’s journey.</p>
+
   <div class="grid">
-    <div class="box">
-      <h3>Foundation Program</h3>
-      <p>
-        For beginners (kids & adults) to learn basic strokes, grip, footwork,
-        rules, and on-court movement.
-      </p>
+    <div class="card">
+      <img src="2.jpg">
+      <div class="content">
+        <h3>Foundation Program</h3>
+        <p>For beginners learning correct grip, footwork, strokes and court movement.</p>
+      </div>
     </div>
-    <div class="box">
-      <h3>Skill Development Program</h3>
-      <p>
-        For intermediate players focusing on technique improvement, drills,
-        consistency, and game awareness.
-      </p>
+
+    <div class="card">
+      <img src="i.jpg">
+      <div class="content">
+        <h3>Skill Development</h3>
+        <p>Technique refinement, consistency drills and tactical awareness.</p>
+      </div>
     </div>
-    <div class="box">
-      <h3>Advanced Performance Program</h3>
-      <p>
-        High-intensity training for competitive players preparing for tournaments
-        and match play.
-      </p>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2">
+      <div class="content">
+        <h3>Advanced Performance</h3>
+        <p>High-intensity sessions focused on tournament preparation.</p>
+      </div>
     </div>
-    <div class="box">
-      <h3>Fitness & Footwork Training</h3>
-      <p>
-        Strength, agility, stamina, and movement training designed specifically
-        for badminton players.
-      </p>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+      <div class="content">
+        <h3>Fitness & Footwork</h3>
+        <p>Speed, stamina, agility and explosive movement training.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- TIMINGS -->
 <section>
-  <h2>Training Timings</h2>
-  <div class="center">
-    <p>Morning Batches: <strong>5:30 AM – 8:30 AM</strong></p>
-    <p>Evening Batches: <strong>4:00 PM – 9:00 PM</strong></p>
-    <p>✔ Separate batches for kids and adults</p>
-    <p>✔ Flexible schedules based on skill level</p>
+  <h2>Training Schedule</h2>
+  <div class="stats">
+    <div class="stat">
+      <h3>Morning Batches</h3>
+      <p>5:30 AM – 8:30 AM</p>
+    </div>
+    <div class="stat">
+      <h3>Evening Batches</h3>
+      <p>4:00 PM – 9:00 PM</p>
+    </div>
+    <div class="stat">
+      <h3>Batch Structure</h3>
+      <p>Separate batches for kids & adults</p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Why Choose AN Badminton Academy</h2>
-  <div class="grid">
-    <div class="box">Experienced and dedicated coaching staff</div>
-    <div class="box">Structured training programs for all levels</div>
-    <div class="box">Indoor courts with a safe environment</div>
-    <div class="box">Personal attention to every player</div>
-    <div class="box">Focus on discipline, fitness, and performance</div>
-  </div>
-</section>
-
+<!-- GALLERY -->
 <section>
   <h2>Training in Action</h2>
-  <div class="grid gallery">
-    <div>Academy Photos Will Appear Here</div>
-    <div>Training Session Images</div>
-    <div>Indoor Court Photos</div>
-    <div>Match Practice Images</div>
+  <div class="gallery">
+    <img src="2.jpg">
+    <img src="i.jpg">
+    <img src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2">
+    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
   </div>
-  <p class="center" style="margin-top:12px; font-size:0.9rem;">
-    (Actual academy photos will be added here)
-  </p>
 </section>
 
 <footer>
   <p><strong>AN Badminton Academy</strong></p>
-  <p>📍 Your academy address will appear here</p>
-  <p>📞 Your contact number will appear here</p>
-  <p>© 2026 AN Badminton Academy. All rights reserved.</p>
+  <p>Your academy address will appear here</p>
+  <p>Your contact number will appear here</p>
+  <p>© 2026 AN Badminton Academy</p>
 </footer>
 
 </body>
